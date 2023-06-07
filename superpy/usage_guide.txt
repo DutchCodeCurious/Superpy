@@ -1,0 +1,137 @@
+Superpy Usage Guide
+
+Superpy is a program designed to help you track the buying and selling data of products. 
+This guide will provide you with a comprehensive overview of how to use Superpy effectively.
+
+
+```
+Command: bought
+Usage: main.py bought [-h] [-bd BUY_DATE] product_name count buy_price expire_date
+
+Positional arguments:
+  product_name   Name of the product (e.g., "Apple")
+  count          Number of items bought (e.g., 10)
+  buy_price      Price at which the items were bought (e.g., 2.99)
+  expire_date    Date when the items expire (YYYY-MM-DD) (e.g., 2023-12-31)
+
+Options:
+  -h, --help                Show this help message and exit
+  -bd BUY_DATE, --buy_date BUY_DATE
+                            Date when the items were bought (YYYY-MM-DD) (optional)
+
+Example: 
+  main.py bought Apple 10 2.99 2023-12-31
+
+----------------------------------------------
+
+Command: sold
+Usage: main.py sold [-h] [--sell_date SELL_DATE] product_name sell_price sold_stock
+
+Positional arguments:
+  product_name   Name of the product (e.g., "Apple")
+  sell_price     Price at which the items were sold (e.g., 3.49)
+  sold_stock     Number of items sold (e.g., 8)
+
+Options:
+  -h, --help                Show this help message and exit
+  --sell_date SELL_DATE      Date when the items were sold (YYYY-MM-DD) (optional)
+
+Example: 
+  main.py sold Apple 3.49 8
+
+----------------------------------------------
+
+Command: bought_by_date
+Usage: main.py bought_by_date [-h] date1 date2
+
+Positional arguments:
+  date1   Start date (e.g., 2023-01-01)
+  date2   End date (e.g., 2023-06-01)
+
+Example: 
+  main.py bought_by_date 2023-01-01 2023-06-01
+
+----------------------------------------------
+
+Command: sold_by_date
+Usage: main.py sold_by_date [-h] date1 date2
+
+Positional arguments:
+  date1   Start date (e.g., 2023-01-01)
+  date2   End date (e.g., 2023-06-01)
+
+Example: 
+  main.py sold_by_date 2023-01-01 2023-06-01
+
+----------------------------------------------
+
+Command: revenue_by_date
+Usage: main.py revenue_by_date [-h] [-f FILE] date1 date2
+
+Positional arguments:
+  date1   Start date (e.g., 2023-01-01)
+  date2   End date (e.g., 2023-06-01)
+
+Options:
+  -h, --help                Show this help message and exit
+  -f FILE                   File to store the revenue data (optional)
+
+Example: 
+  main.py revenue_by_date -f revenue_data.json 2023-01-01 2023-06-01
+
+----------------------------------------------
+
+Command: convert
+Usage: main.py convert [-h] input_file output_file output_format
+
+Positional arguments:
+  input_file      File to be converted (e.g., "data.csv")
+  output_file     Name of the new file (e.g., "converted_data")
+  output_format   Choose between JSON or Excel (e.g., "json" or "excel")
+
+Example: 
+  main.py convert data.csv converted_data.json json
+```
+
+Additional Commands:
+
+Superpy provides the following additional commands:
+
+1. Command: create_sold
+   Description: Create a sold.csv file in the current directory.
+
+2. Command: create_bought
+   Description: Create a bought.csv file in the current directory.
+
+3. Command: profit
+   Description: View the total profit.
+
+4. Command: sold_data
+   Description: View the sold data.
+
+5. Command: stock_data
+   Description: View the inventory data.
+
+6. Command: show_revenue
+   Description: View the revenue.
+
+7. Command: expire_check
+   Description: Check for expired items and move them to sold.
+
+8. Command: value_stock
+   Description: View the value of the inventory.
+
+9. Command: stock_graph
+   Description: Show a bar graph of the inventory.
+
+10. Command: sold_graph
+    Description: Show a bar graph of the sold products.
+
+11. Command: get_date
+    Description: Retrieve the date stored in date.txt.
+
+12. Command: set_date
+    Description: Set a specific date in date.txt.
+
+13. Command: advance_date
+    Description: Advance or go back in date by the specified number of days.
